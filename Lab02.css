@@ -1,16 +1,22 @@
 * {
     margin: 0;
-    font-family: sans-serif , serif;
+    font-family: sans-serif, serif;
     padding: 0;
     font-size: 1em;
 
 }
-.TimesNewRoman{
-     font-family: "Times New Roman";
+
+.TimesNewRoman {
+    font-family: "Times New Roman";
 }
-.i{
+
+.i {
     font-style: italic;
 }
+.lighter{
+    font-weight: lighter;
+}
+
 body {
     padding-left: 5%;
     padding-right: 5%;
