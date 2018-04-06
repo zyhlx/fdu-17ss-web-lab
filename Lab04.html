@@ -1,21 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head >
-   <meta charset="utf-8">
-   <title>Lab 04</title>
-   <link rel="stylesheet" href="./css/reset.css" />
-   <link rel="stylesheet" href="./css/Lab04.css" />
+<head>
+    <meta charset="utf-8">
+    <title>Lab 04</title>
+    <link rel="stylesheet" href="./css/reset.css"/>
+    <link rel="stylesheet" href="./css/Lab04.css"/>
 </head>
 <body>
 <header>
-     <h1>Share Your Travels</h1>
-     <p>let us know where you've been</p>
+    <h1>Share Your Travels</h1>
+    <p>let us know where you've been</p>
 </header>
 <main>
-   <section>
-   
-   </section>
-</main>  
+    <section>
+        <form method="post" action="http://www.randyconnolly.com/tests/process.php">
+            <fieldset>
+                <legend>PHOTO DETAILS</legend>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <p>Title:</p>
+                            <input type="text" placeholder="Give your photo a descriptive name" name="title">
+                            <p>Description:</p>
+                            <textarea placeholder="Adding a description will help with search results"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Continent</p>
+                            <select id="continent">
+                                <option value="">choose continent</option>
+                                <option value="Asian">Asian</option>
+                                <option value="Europe">Europe</option>
+                            </select>
+                            <p>Country</p>
+                            <select id="country">
+                                <option value="">choose country</option>
+                                <option value="China">China</option>
+                                <option value="Japan">Japan</option>
+                                <option value="Germany">Germany</option>
+                            </select>
+                            <p>City</p>
+                            <input type="text" name="city">
+                        </td>
+                        <td>
+                            <div class="box">
+                                <p>Copyright？</p>
+                                <input type="radio" value="All rights reserved" checked>All rights reserved
+                                <br>
+                                <input type="radio" name="Creative Commons" value="female">Creative Commons
+                            </div>
+                            <div class="box">
+                                <p>Creative Commons</p>
+                                <input type="checkbox" name="Attribution">Attribution<br>
+                                <input type="checkbox" name="Noncommercial">Noncommercial<br>
+                                <input type="checkbox" name="No Derivative Works">No Derivative Works<br>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="rectangle">I accept the software license<input type="checkbox" name="accept"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Rate this photo:</p>
+                            <input type="number" name="rate">
+                            <p>Color Collection:</p>
+                            <input type="color" name="color">
+                        </td>
+                        <td>
+                            <div class="box">
+                                <p>Date Taken</p>
+                                <input type="date" name="date">
+                                <br>
+                                <p>Time Taken</p>
+                                <input type="time" name="time">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p class="rectangle">
+                                <button class="rounded">提交</button>
+                                <button class="rounded">Clear Form</button>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </section>
+</main>
 
 
 </body>
