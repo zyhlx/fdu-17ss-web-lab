@@ -34,102 +34,134 @@
             <form method="post" action="http://www.randyconnolly.com/tests/process.php" class="form-group">
                 <fieldset>
                     <legend>PHOTO DETAILS</legend>
-                    <table class="container">
-                        <tbody class="container-fluid">
-                        <tr class="row">
-                            <td colspan="2" class="col-sm-12">
-                                <p>Title:</p>
-                                <input type="text" placeholder="Give your photo a descriptive name" name="title"
-                                       class="form-control">
-                                <p>Description:</p>
-                                <textarea placeholder="Adding a description will help with search results"
-                                          class="form-control"></textarea>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td class="col-sm-12">
-                                <p>Continent</p>
-                                <select id="continent" class="form-control">
-                                    <option value="">choose continent</option>
-                                    <option value="Asian">Asian</option>
-                                    <option value="Europe">Europe</option>
-                                </select>
-                                <p>Country</p>
-                                <select id="country" class="form-control">
-                                    <option value="">choose country</option>
-                                    <option value="China">China</option>
-                                    <option value="Japan">Japan</option>
-                                    <option value="Germany">Germany</option>
-                                </select>
-                                <p>City</p>
-                                <input type="text" name="city" class="form-control">
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td class="col-sm-12">
-                                <label>Copyright？</label>
-                                <div class="radio" id="radio">
-                                    <input type="radio" value="All rights reserved" checked>All rights reserved
-                                </div>
-                                <div class="radio">
-                                    <input type="radio" name="Creative Commons" value="female">Creative Commons
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td class="col-sm-12">
-                                <label for="commons">Creative Commons</label>
-                                <div id="commons">
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" name="Attribution" class=".form-check-inline">Attribution
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" name="Noncommercial" class=".form-check-inline">Noncommercial
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input type="checkbox" name="No Derivative Works" class=".form-check-inline">No
-                                        Derivative Works
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td colspan="2" class="col-sm-12">
-                                <p class="form-check"><input type="checkbox" name="accept" class="form-check-input">
-                                    I accept the software license</p>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td class="col-sm-4">
-                                <p>Rate this photo:</p>
-                                <input type="number" name="rate" class="form-control">
-                            </td>
-                            <td class="col-sm-8">
-                                <p>Color Collection:</p>
-                                <input type="text" name="color" class="form-control">
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td class="col-sm-8">
-                                <div class="form-group">
+                    <!--<table class="container">-->
+                    <!--<tbody class="container-fluid">-->
+                    <!--<div class="row">-->
+                    <div class="col-sm-12 row">
+                        <label for="title">Title:</label>
+                        <input type="text" placeholder="Give your photo a descriptive name" id="title"
+                               class="form-control">
+                    </div>
+                        <br>
+                    <div class="col-sm-12 row">
+                        <label for="description">Description:</label>
+                        <textarea placeholder="Adding a description will help with search results" id="description"
+                                  class="form-control"></textarea>
+                    </div>
+                    <br>
+                    <!--</>-->
+                    <!--<tr class="row">-->
+                    <!--<td class="col-sm-12">-->
+                    <div class="col-sm-12 row">
+                        <label for="continent">Continent</label>
+                        <select id="continent" class="form-control">
+                            <option value="">choose continent</option>
+                            <option value="Asian">Asian</option>
+                            <option value="Europe">Europe</option>
+                        </select>
+                    </div>
+                        <br>
+                    <div class="col-sm-12 row">
+                        <label for="country">Country</label>
+                        <select id="country" class="form-control">
+                            <option value="">choose country</option>
+                            <option value="China">China</option>
+                            <option value="Japan">Japan</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-sm-12 row">
+                        <label for="city">City</label>
+                        <input type="text" id="city" class="form-control">
+                        <!--</td>-->
+                        <!--</tr>-->
+                    </div>
+                    <br>
+                    <label for="radio">Copyright？</label>
+                    <div class="row">
+                        <!--<tr class="row">-->
+                        <!--<td class="col-sm-12">-->
+
+                        <div class="radio col-sm-12" id="radio">
+                            <input name="copyright" type="radio" value="All rights reserved" checked>All rights reserved
+                        </div>
+                        <div class="radio col-sm-12">
+                            <input type="radio" name="copyright" value="female">Creative Commons
+                        </div>
+                        <!--</td>-->
+                        <!--</tr>-->
+                    </div>
+                    <br>
+                    <label for="commons">Creative Commons Types</label>
+                    <div class="col-sm-12 row">
+                        <!--<tr class="row">-->
+                        <!--<td class="col-sm-12">-->
+
+                        <div id="commons">
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" name="commons" value="Attribution" class=".form-check-inline">Attribution
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" name="commons" value="Noncommercial" class=".form-check-inline">Noncommercial
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="checkbox" name="commons" value="No Derivative Works"
+                                       class=".form-check-inline">No Derivative Works
+                            </div>
+                        </div>
+                        <!--</td>-->
+                        <!--</tr>-->
+                    </div>
+                    <br>
+                    <div class="col-sm-12 row">
+                        <!--<tr class="row">-->
+                        <!--<td colspan="2" class="col-sm-12">-->
+                        <p class="form-check"><input type="checkbox" name="accept" class="form-check-input">
+                            I accept the software license</p>
+                        <!--</td>-->
+                        <!--</tr>-->
+                    </div>
+                    <br>
+                    <!--<tr class="row">-->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <p>Rate this photo:</p>
+                            <input type="number" name="rate" class="form-control">
+                        </div>
+                        <div class="col-sm-8">
+                            <p>Color Collection:</p>
+                            <input type="text" name="color" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <!--<tr class="row">-->
+                        <div class="col-sm-8">
+                            <div class="form-group">
                                 <p>Date Taken</p>
-                                <input type="text" name="date" class="form-control"></div></td>
-                            <td class="col-sm-4">
-                                <div class="form-group">
+                                <input type="text" name="date" class="form-control"></div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
                                 <p>Time Taken</p>
                                 <input type="text" name="time" class="form-control"></div>
-                            </td>
-                        </tr>
-                        <tr class="row">
-                            <td colspan="2" class="col-sm-12">
-                                <p class="btn-group">
-                                    <button class="btn btn-secondary" type="submit">Submit</button>
-                                    <button class="btn btn-secondary" type="reset">Clear</button>
-                                </p>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                        </div>
+                        <!--</tr>-->
+                    </div>
+                    <br>
+                    <div class="row col-sm-12">
+                        <!--<tr class="row">-->
+                        <!--<td colspan="2" class="col-sm-12">-->
+                        <p class="btn-group">
+                            <button class="btn btn-secondary" type="submit">Submit</button>
+                            <button class="btn btn-secondary" type="reset">Clear</button>
+                        </p>
+                        <!--</td>-->
+                        <!--</tr>-->
+                        <!--</tbody>-->
+                        <!--</table>-->
+                    </div>
                 </fieldset>
             </form>
         </section>
