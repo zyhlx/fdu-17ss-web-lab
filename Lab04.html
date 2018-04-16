@@ -3,98 +3,146 @@
 <head>
     <meta charset="utf-8">
     <title>Lab 04</title>
-    <link rel="stylesheet" href="./css/reset.css"/>
-    <link rel="stylesheet" href="./css/Lab04.css"/>
+    <!--<link rel="stylesheet" href="./css/reset.css"/>-->
+    <!--<link rel="stylesheet" href="./css/Lab04.css"/>-->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<header>
-    <h1>Share Your Travels</h1>
-    <p>let us know where you've been</p>
-</header>
-<main>
-    <section>
-        <form method="post" action="http://www.randyconnolly.com/tests/process.php">
-            <fieldset>
-                <legend>PHOTO DETAILS</legend>
-                <table>
-                    <tbody>
-                    <tr>
-                        <td colspan="2">
-                            <p>Title:</p>
-                            <input type="text" placeholder="Give your photo a descriptive name" name="title">
-                            <p>Description:</p>
-                            <textarea placeholder="Adding a description will help with search results"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Continent</p>
-                            <select id="continent">
-                                <option value="">choose continent</option>
-                                <option value="Asian">Asian</option>
-                                <option value="Europe">Europe</option>
-                            </select>
-                            <p>Country</p>
-                            <select id="country">
-                                <option value="">choose country</option>
-                                <option value="China">China</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Germany">Germany</option>
-                            </select>
-                            <p>City</p>
-                            <input type="text" name="city">
-                        </td>
-                        <td>
-                            <div class="box">
-                                <p>Copyright？</p>
-                                <input type="radio" value="All rights reserved" checked>All rights reserved
-                                <br>
-                                <input type="radio" name="Creative Commons" value="female">Creative Commons
-                            </div>
-                            <div class="box">
-                                <p>Creative Commons</p>
-                                <input type="checkbox" name="Attribution">Attribution<br>
-                                <input type="checkbox" name="Noncommercial">Noncommercial<br>
-                                <input type="checkbox" name="No Derivative Works">No Derivative Works<br>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <p class="rectangle">I accept the software license<input type="checkbox" name="accept"></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>Rate this photo:</p>
-                            <input type="number" name="rate">
-                            <p>Color Collection:</p>
-                            <input type="color" name="color">
-                        </td>
-                        <td>
-                            <div class="box">
+<div class="container">
+    <header class="row">
+        <div class="col-sm-4">
+            <h1>Share Your Travels</h1>
+            <p>let us know where you've been</p>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-light col-sm-8">
+            <ul class="navbar-nav col-sm-12 nav-justified">
+                <li class="nav-item">
+                    <a class="nav-link" href="Lab02.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Feeling Lucky</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">User</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="border card">
+        <section class="card-body">
+            <form method="post" action="http://www.randyconnolly.com/tests/process.php" class="form-group">
+                <fieldset>
+                    <legend>PHOTO DETAILS</legend>
+                    <table class="container">
+                        <tbody class="container-fluid">
+                        <tr class="row">
+                            <td colspan="2" class="col-sm-12">
+                                <p>Title:</p>
+                                <input type="text" placeholder="Give your photo a descriptive name" name="title"
+                                       class="form-control">
+                                <p>Description:</p>
+                                <textarea placeholder="Adding a description will help with search results"
+                                          class="form-control"></textarea>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-sm-12">
+                                <p>Continent</p>
+                                <select id="continent" class="form-control">
+                                    <option value="">choose continent</option>
+                                    <option value="Asian">Asian</option>
+                                    <option value="Europe">Europe</option>
+                                </select>
+                                <p>Country</p>
+                                <select id="country" class="form-control">
+                                    <option value="">choose country</option>
+                                    <option value="China">China</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Germany">Germany</option>
+                                </select>
+                                <p>City</p>
+                                <input type="text" name="city" class="form-control">
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-sm-12">
+                                <label>Copyright？</label>
+                                <div class="radio" id="radio">
+                                    <input type="radio" value="All rights reserved" checked>All rights reserved
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="Creative Commons" value="female">Creative Commons
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-sm-12">
+                                <label for="commons">Creative Commons</label>
+                                <div id="commons">
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" name="Attribution" class=".form-check-inline">Attribution
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" name="Noncommercial" class=".form-check-inline">Noncommercial
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" name="No Derivative Works" class=".form-check-inline">No
+                                        Derivative Works
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td colspan="2" class="col-sm-12">
+                                <p class="form-check"><input type="checkbox" name="accept" class="form-check-input">
+                                    I accept the software license</p>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-sm-4">
+                                <p>Rate this photo:</p>
+                                <input type="number" name="rate" class="form-control">
+                            </td>
+                            <td class="col-sm-8">
+                                <p>Color Collection:</p>
+                                <input type="text" name="color" class="form-control">
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td class="col-sm-8">
+                                <div class="form-group">
                                 <p>Date Taken</p>
-                                <input type="date" name="date">
-                                <br>
+                                <input type="text" name="date" class="form-control"></div></td>
+                            <td class="col-sm-4">
+                                <div class="form-group">
                                 <p>Time Taken</p>
-                                <input type="time" name="time">
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <p class="rectangle">
-                                <button class="rounded">提交</button>
-                                <button class="rounded">Clear Form</button>
-                            </p>
-                        </td>
-                    </tr>
-                </table>
-            </fieldset>
-        </form>
-    </section>
-</main>
-
-
+                                <input type="text" name="time" class="form-control"></div>
+                            </td>
+                        </tr>
+                        <tr class="row">
+                            <td colspan="2" class="col-sm-12">
+                                <p class="btn-group">
+                                    <button class="btn btn-secondary">Submit</button>
+                                    <button class="btn btn-secondary">Clear</button>
+                                </p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 </html>
