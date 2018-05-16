@@ -1,0 +1,32 @@
+*{
+    margin-left: auto;
+    margin-right: auto;
+}
+body{
+    text-align: center;
+}
+select{
+    display: block;
+}
+table{
+    border: 0px;
+}
+table thead{
+    background-color: grey;
+    color: whitesmoke;
+}
+td{
+    padding: 0 0.5em;
+}
+tbody tr:nth-child(odd){
+    background-color: lightgrey;
+}
+select,#commit{
+    width: 300px;
+}
+#show{
+    display: none;
+}
+#commit{
+    display: none;
+}
