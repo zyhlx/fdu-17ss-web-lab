@@ -10,18 +10,20 @@ function generateLink($url, $label, $class) {
 
 function outputPostRow($number)  {
     include("travel-data.inc.php");
-    $postId=putTogether('postId',$number);
+//    另一种连缀方式标注${"postId".$number} 为什么我没有早点知道……
+    $postId = putTogether('postId',$number);
+    $userId = putTogether('userId',$number);
     $thumb = putTogether('thumb',$number);
     $date = putTogether('date',$number);
     $title = putTogether('title',$number);
     $userName = putTogether('userName',$number);
     $reviewsRating = putTogether('reviewsRating',$number);
     $reviewsNum = putTogether('reviewsNum',$number);
-    $excert = putTogether('excerpt',$number);
+    $excerpt = putTogether('excerpt',$number);
     echo "<div class='row'><div class='col-md-4'>".generateLink('post.php?id='.$$postId,"<img src='images/".$$thumb."' alt='".$$title."' class='img-responsive'>","")."
-</div><div class='col-md-8'><h2>".$$title."</h2><div class='details'>\"Posted by\"".generateLink("user.php?id=".$$postId,"".$$userName,"")."<span class='pull-right'>".$$date."</span>
-<p class='ratings'>".constructRating($$reviewsRating).$$reviewsNum." Reviews</p></div><p class='excerpt'>".$$excert."</p><p>".generateLink("post.php?id=".$$postId,"Read more","btn btn-primary btn-sm")."</p></div>
-</div>";
+</div><div class='col-md-8'><h2>".$$title."</h2><div class='details'>\"Posted by\"".generateLink("user.php?id=".$$userId,"".$$userName,"")."<span class='pull-right'>".$$date."</span>
+<p class='ratings'>".constructRating($$reviewsRating).$$reviewsNum." Reviews</p></div><p class='excerpt'>".$$excerpt."</p><p>".generateLink("post.php?id=".$$postId,"Read more","btn btn-primary btn-sm")."</p></div>
+</div><hr>";
 }
 
 function putTogether($first,$second){
