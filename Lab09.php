@@ -41,7 +41,12 @@ include 'travel-data.inc.php';
               /* you will need to fill this place with appropriate PHP */
               /* hint: use array and loop */
               //the next line is an example
-              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a> 
+              //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a>
+              include("travel-data.inc.php");
+              foreach($countries as $x=>$x_value)
+              {
+                  echo "<a href='list.php?country=".$x_value."' role='button' class='btn btn-default'>".$x_value."</a>";
+              }
 
 
               ?>
@@ -71,6 +76,24 @@ include 'travel-data.inc.php';
    //              	</div>
    //              </a>
 			// </li>
+
+
+          foreach ($images as $x=>$x_value){
+              echo "<li>
+                        <a href='detail.php?id=".$x."' class='img-responsive'>
+                 	        <img src='images/square/".$x_value["path"]."' alt='{$x_value["title"]}'>
+                 	        <div class='caption'>
+                 		        <div class='blur'>
+                 		        </div>
+                 		        <div class='caption-text'>
+                 			        <h1>{$x_value["title"]}</h1>
+                 		        </div>
+                 	        </div>
+                         </a>
+			             </li>";
+
+          }
+
           ?>
 
        </ul>       
