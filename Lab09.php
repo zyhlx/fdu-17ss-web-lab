@@ -43,6 +43,7 @@ include 'travel-data.inc.php';
               //the next line is an example
               //<a href="list.php?country=Canada" role="button" class="btn btn-default"> Canada</a>
               include("travel-data.inc.php");
+              ksort($countries);
               foreach($countries as $x=>$x_value)
               {
                   echo "<a href='list.php?country=".$x_value."' role='button' class='btn btn-default'>".$x_value."</a>";
