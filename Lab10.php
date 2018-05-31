@@ -9,6 +9,7 @@ if (!$conn) {
     die('连接错误: ' . mysqli_error($conn));
 }
 
+//应该会自动断开链接
 //****** Hint ******
 //connect database and fetch data here
 
@@ -92,18 +93,19 @@ if (!$conn) {
     <ul class="caption-style-2">
         <?php
         //Fill this place
-        ////没有封装因为懒……
-        $continents = htmlspecialchars($_GET['continent']);
-        $countries = htmlspecialchars($_GET['country']);
 
-        if ($continents != '0' && $countries != '0') {
-            // 两个都选了
-            mysqli_select_db($conn, 'travel');
-            mysqli_query($conn, "set names utf8");
-            $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails WHERE CountryCodeISO' . '="' . $countries . '" and ContinentCode ="' . $continents . '"';
-            $result = $conn->query($sql) or die($conn->error);
-            while ($row = $result->fetch_assoc()) {
-                echo '     <li>
+        if(isset($_GET['continent'])){
+            $continents = htmlspecialchars($_GET['continent']);
+            $countries = htmlspecialchars($_GET['country']);
+
+            if ($continents != '0' && $countries != '0') {
+//                两个都选了
+                mysqli_select_db($conn, 'travel');
+                mysqli_query($conn, "set names utf8");
+                $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails WHERE CountryCodeISO' . '="' . $countries . '" and ContinentCode ="' . $continents . '"';
+                $result = $conn->query($sql) or die($conn->error);
+                while ($row = $result->fetch_assoc()) {
+                    echo '     <li>
               <a href="detail.php?id=' . $row['ImageID'] . '" class="img-responsive">
                 <img src="images/square-medium/' . $row['Path'] . '" alt="' . $row['Title'] . '">
                 <div class="caption">
@@ -114,17 +116,17 @@ if (!$conn) {
                 </div>
               </a>
             </li>        ';
+                }
             }
-        }
 
-        if ($countries != '0' && $continents === '0') {
-            // 只选了国家
-            mysqli_select_db($conn, 'travel');
-            mysqli_query($conn, "set names utf8");
-            $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails WHERE CountryCodeISO' . '="' . $countries . '"';
-            $result = $conn->query($sql) or die($conn->error);
-            while ($row = $result->fetch_assoc()) {
-                echo '     <li>
+            if ($countries != '0' && $continents === '0') {
+//                只选了国家
+                mysqli_select_db($conn, 'travel');
+                mysqli_query($conn, "set names utf8");
+                $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails WHERE CountryCodeISO' . '="' . $countries . '"';
+                $result = $conn->query($sql) or die($conn->error);
+                while ($row = $result->fetch_assoc()) {
+                    echo '     <li>
               <a href="detail.php?id=' . $row['ImageID'] . '" class="img-responsive">
                 <img src="images/square-medium/' . $row['Path'] . '" alt="' . $row['Title'] . '">
                 <div class="caption">
@@ -135,17 +137,17 @@ if (!$conn) {
                 </div>
               </a>
             </li>        ';
+                }
             }
-        }
 
-        if ($continents != '0' && $countries === '0') {
-            //只选了洲
-            mysqli_select_db($conn, 'travel');
-            mysqli_query($conn, "set names utf8");
-            $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails WHERE ContinentCode' . '="' . $continents . '"';
-            $result = $conn->query($sql) or die($conn->error);
-            while ($row = $result->fetch_assoc()) {
-                echo '     <li>
+            if ($continents != '0' && $countries === '0') {
+//                只选了洲
+                mysqli_select_db($conn, 'travel');
+                mysqli_query($conn, "set names utf8");
+                $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails WHERE ContinentCode' . '="' . $continents . '"';
+                $result = $conn->query($sql) or die($conn->error);
+                while ($row = $result->fetch_assoc()) {
+                    echo '     <li>
               <a href="detail.php?id=' . $row['ImageID'] . '" class="img-responsive">
                 <img src="images/square-medium/' . $row['Path'] . '" alt="' . $row['Title'] . '">
                 <div class="caption">
@@ -156,17 +158,17 @@ if (!$conn) {
                 </div>
               </a>
             </li>        ';
+                }
             }
-        }
 
-        if ($countries === '0' && $continents === '0') {
-            //都没选
-            mysqli_select_db($conn, 'travel');
-            mysqli_query($conn, "set names utf8");
-            $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails';
-            $result = $conn->query($sql) or die($conn->error);
-            while ($row = $result->fetch_assoc()) {
-                echo '     <li>
+            if ($countries === '0' && $continents === '0') {
+//            都没选
+                mysqli_select_db($conn, 'travel');
+                mysqli_query($conn, "set names utf8");
+                $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails';
+                $result = $conn->query($sql) or die($conn->error);
+                while ($row = $result->fetch_assoc()) {
+                    echo '     <li>
               <a href="detail.php?id=' . $row['ImageID'] . '" class="img-responsive">
                 <img src="images/square-medium/' . $row['Path'] . '" alt="' . $row['Title'] . '">
                 <div class="caption">
@@ -177,8 +179,28 @@ if (!$conn) {
                 </div>
               </a>
             </li>        ';
+                }
             }
+        }else{
+             mysqli_select_db($conn, 'travel');
+                mysqli_query($conn, "set names utf8");
+                $sql = 'SELECT ImageID, Title, Description,CountryCodeISO,ContinentCode,Path FROM imagedetails';
+                $result = $conn->query($sql) or die($conn->error);
+                while ($row = $result->fetch_assoc()) {
+                    echo '     <li>
+              <a href="detail.php?id=' . $row['ImageID'] . '" class="img-responsive">
+                <img src="images/square-medium/' . $row['Path'] . '" alt="' . $row['Title'] . '">
+                <div class="caption">
+                  <div class="blur"></div>
+                  <div class="caption-text">
+                    <p>' . $row['Description'] . '</p>
+                  </div>
+                </div>
+              </a>
+            </li>        ';
+                }
         }
+
         //****** Hint ******
         /* use while loop to display images that meet requirements ... sample below ... replace ???? with field data
         <li>
